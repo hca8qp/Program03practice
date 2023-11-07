@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 class Media {
@@ -9,12 +10,13 @@ public:
 	Media();
 	Media(char type, string title, string keyname, int rating, string genre, int length, int yearReleased);
 
-	char getType();
-	string getTitle();
-	string getKeyName();
-	int getRating();
+	char getType() const;
+	string getTitle() const;
+	string getKeyName() const;
+	int getRating() const;
+	string getGenre();
 	int getLength();
-	int getYearReleased();
+	int getYearReleased() const;
 
 	void setType(char type);
 	void setTitle(string title);
@@ -34,7 +36,6 @@ private:
 	int yearReleased;
 
 };
-
 int readMediaList(istream& in, ostream& outErr, vector<Media>& m);
 void printAllMedia(istream& in, ostream& out, ostream& outErr, const vector<Media>& m);
 void printMovieList(istream& in, ostream& out, ostream& outErr, const vector<Media>& m);

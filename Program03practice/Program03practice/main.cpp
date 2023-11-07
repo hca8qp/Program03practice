@@ -17,12 +17,12 @@ int main() {
 		cerr << "Error opening files." << endl;
 		return 1; //Exiting with an error code
 	}
-
-	if (readMediaList(mediaFile, errorFile, mediaCollection) != 0) {
-		cerr << "Error: Failed to read media information." << endl;
-		return 1; // Exit with an error code.
+	
+	if(readMediaList(mediaFile, errorFile, mediaCollection) != 0) {
+		cerr << "Error loading media information from 'mediaList.txt'." << endl;
+		return 1; // Exiting with an error code
 	}
-
+	
 	char option;
 
 	while (true) {
